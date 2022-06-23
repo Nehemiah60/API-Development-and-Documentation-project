@@ -48,6 +48,7 @@ class FormView extends Component {
       crossDomain: true,
       success: (result) => {
         document.getElementById('add-question-form').reset();
+        alert('Question added to list');
         return;
       },
       error: (error) => {
@@ -68,8 +69,7 @@ class FormView extends Component {
         <form
           className='form-view'
           id='add-question-form'
-          onSubmit={this.submitQuestion}
-        >
+          onSubmit={this.submitQuestion}>
           <label>
             Question
             <input type='text' name='question' onChange={this.handleChange} />

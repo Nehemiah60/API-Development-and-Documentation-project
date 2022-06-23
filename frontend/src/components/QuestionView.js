@@ -54,8 +54,7 @@ class QuestionView extends Component {
           className={`page-num ${i === this.state.page ? 'active' : ''}`}
           onClick={() => {
             this.selectPage(i);
-          }}
-        >
+          }}>
           {i}
         </span>
       );
@@ -84,7 +83,7 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm) => {
     $.ajax({
-      url: `/questions`, //TODO: update request URL
+      url: `/questions/search`, //TODO: update request URL
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -133,8 +132,7 @@ class QuestionView extends Component {
           <h2
             onClick={() => {
               this.getQuestions();
-            }}
-          >
+            }}>
             Categories
           </h2>
           <ul>
@@ -143,8 +141,7 @@ class QuestionView extends Component {
                 key={id}
                 onClick={() => {
                   this.getByCategory(id);
-                }}
-              >
+                }}>
                 {this.state.categories[id]}
                 <img
                   className='category'
